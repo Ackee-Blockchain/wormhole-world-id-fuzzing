@@ -19,8 +19,8 @@ trident-fuzzing = ["dep:trident-fuzz"]
 
 
 [dependencies]
-trident-derive-accounts-snapshots = { git = "https://github.com/Ackee-Blockchain/trident.git", rev = "eb8f647104209323b53e3637d3d3c5b7d140d368" }
-trident-fuzz = { git = "https://github.com/Ackee-Blockchain/trident.git", rev = "eb8f647104209323b53e3637d3d3c5b7d140d368", optional = true }
+trident-derive-accounts-snapshots = { git = "https://github.com/Ackee-Blockchain/trident.git", rev = "b65d5dd7a747d9463822b7650af27a826dc01d2e" }
+trident-fuzz = { git = "https://github.com/Ackee-Blockchain/trident.git", rev = "b65d5dd7a747d9463822b7650af27a826dc01d2e", optional = true }
 anchor-lang = "0.30.1"
 ethnum = "1.3.2"
 solana-world-id-program = { path = "../solana-world-id-program", features = [
