@@ -4,10 +4,6 @@ use trident_client::fuzzing::*;
 pub const MAINNET_CORE_BRIDGE_ID: Pubkey = pubkey!("worm2ZoG2kUd4vFXhvjh93UUH596ayRfgQ2MgjNMTth");
 
 pub mod guardian_set_9_mock_nineteen_guardians {
-    use super::*;
-
-    pub const GUARDIAN_SET_9_MOCK_NINETEEN_GUARDIANS_ADDRESS: Pubkey =
-        pubkey!("GLWXJeoT37zCViHRsFudGMBYDYo8ddcv6LyvJJw7hSjh");
 
     pub const NINETEEN_MOCK_GUARDIAN_SET_INDEX: u32 = 9;
 

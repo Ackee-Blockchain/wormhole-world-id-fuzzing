@@ -54,18 +54,8 @@ fn fuzz_iteration<T: FuzzTestExecutor<U> + std::fmt::Display, U>(
         processor!(convert_entry!(entry_solana_world_id_program)),
     );
 
-    let guardian_set_5_mock = FuzzingAccountBase64::new(
-        crate::quardian_set_5_mock::GUARDIAN_SET_5_MOCK,
-        1141440,
-        MAINNET_CORE_BRIDGE_ID,
-        "BQAAAAEAAAC++kKdV80Yt/ik2RotqatK8F0PvoX2jWIAAAAA",
-    );
-
-    let mut client = ProgramTestClientBlocking::new(
-        &[fuzzing_program_solana_world_id_program],
-        &[guardian_set_5_mock],
-    )
-    .unwrap();
+    let mut client =
+        ProgramTestClientBlocking::new(&[fuzzing_program_solana_world_id_program], config).unwrap();
 
     let _ = fuzz_data.run_with_runtime(&mut client, config);
 }

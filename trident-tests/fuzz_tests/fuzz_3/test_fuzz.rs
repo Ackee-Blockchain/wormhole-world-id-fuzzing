@@ -49,18 +49,8 @@ fn fuzz_iteration<T: FuzzTestExecutor<U> + std::fmt::Display, U>(
         processor!(convert_entry!(entry_solana_world_id_program)),
     );
 
-    let guardian_set_9_mock_nineteen_guardians = FuzzingAccountBase64::new(
-        guardian_set_9_mock_nineteen_guardians::GUARDIAN_SET_9_MOCK_NINETEEN_GUARDIANS_ADDRESS,
-        1141440,
-        MAINNET_CORE_BRIDGE_ID,
-        "CQAAABMAAAC++kKdV80Yt/ik2RotqatK8F0PvojX2LMqkQXSKBAOct/+L64HBdMcWAdvVhzGKkcIe1Z8hvmGQm380AC9bpgzSQ+PqHxzOhg80Hamy9KQdLhT/PClx4wbVtFfznoVTm6+nteirzUD29LjdRirBNfOeLYw+YsVt4p4VjLepWCQZIA7HI6ouyx3pgBL0QmigaaYwPW6MfFYWFtB9PM2WeVNMXhEOrdqYOIWkNv7F/f1nwmuPqFkfsJq5JsUBgZgUE9NocIFnhxatoEKw9jhJYvS8ASpTKDNTGj8HAYRgGEOltZFsS9Hrlz0VGsYU4c56Q8u2w2FMOMaIY5yuUgCAqy66wYXjaeIWOXlxHBc3Utmj/475brkhnydXv46Be/GLWDh0Z+utWqAIjzdNHLXkbfTLAWrscwAtjgfoMSSjwxW/BS8ApuICQaQk9cSo/1N+rMZY1l+JGqyn8br7fLTkqUastxcWdCQKgMTKoTf2SCzWj0LpfegY13ymPkDPoX2jWIAAAAA",
-    );
-
-    let mut client = ProgramTestClientBlocking::new(
-        &[fuzzing_program_solana_world_id_program],
-        &[guardian_set_9_mock_nineteen_guardians],
-    )
-    .unwrap();
+    let mut client =
+        ProgramTestClientBlocking::new(&[fuzzing_program_solana_world_id_program], config).unwrap();
 
     let _ = fuzz_data.run_with_runtime(&mut client, config);
 }

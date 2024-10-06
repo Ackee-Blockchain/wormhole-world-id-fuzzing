@@ -59,7 +59,7 @@ fn fuzz_iteration<T: FuzzTestExecutor<U> + std::fmt::Display, U>(
     );
 
     let mut client =
-        ProgramTestClientBlocking::new(&[fuzzing_program_solana_world_id_program], &[]).unwrap();
+        ProgramTestClientBlocking::new(&[fuzzing_program_solana_world_id_program], config).unwrap();
 
     let _ = fuzz_data.run_with_runtime(&mut client, config);
 }
