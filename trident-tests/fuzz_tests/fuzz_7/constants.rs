@@ -4,10 +4,8 @@ use trident_client::fuzzing::*;
 pub const MAINNET_CORE_BRIDGE_ID: Pubkey = pubkey!("worm2ZoG2kUd4vFXhvjh93UUH596ayRfgQ2MgjNMTth");
 
 pub mod quardian_set_5_mock {
-    use super::*;
 
     pub const MOCK_GUARDIAN_SET_INDEX: u32 = 0;
-    pub const GUARDIAN_SET_0_MOCK: Pubkey = pubkey!("DS7qfSAgYsonPpKoAjcGhX9VFjXdGkiHjEDkTidf8H2P");
     // pub const RECIPIENT: Pubkey = pubkey!("5yNbCZcCHeAxdmMJXcpFgmurEnygaVbCRwZNMMWETdeZ");
 
     pub const BYTES: [u8; 220] = [
